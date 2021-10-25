@@ -22,11 +22,13 @@ const EscenaStyledClicked = styled.p`
 //const [frase, onclick] = useState(true);
 
 
-function Escena ({dato}) {
-
+function Escena ({dato, selectedScene, isSelectedScene, printHello}) {
+    /* console.log(selectedScene)
+    console.log(isSelectedScene) */
+    console.log(printHello)
     return ( 
         <Fragment>
-            <EscenaStyled>{dato}</EscenaStyled> 
+            {isSelectedScene ? <EscenaStyledClicked>{dato}</EscenaStyledClicked>  : <EscenaStyled>{dato}</EscenaStyled> }
         </Fragment>   
     );
 }

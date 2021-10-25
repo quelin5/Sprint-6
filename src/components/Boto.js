@@ -15,14 +15,21 @@ const DivFlex = styled.div`
 `;
 
 
-const Boto = () => {
+const Boto = ({setSelectedScene, setPrintHello}) => {
+    
     return ( 
         <DivFlex>
-            <BotoStyled className='Anterior'>
+            <BotoStyled className='Anterior' onClick={()=> {
+                setSelectedScene(-1)
+                setPrintHello('Hello')
+                }}>
                 Anterior
             </BotoStyled>
 
-            <BotoStyled className='Següent'>
+            <BotoStyled className='Següent' onClick={()=>{
+                setSelectedScene(+1)
+                setPrintHello('Hello')
+                }}>
                 Següent
             </BotoStyled>   
         </DivFlex>
