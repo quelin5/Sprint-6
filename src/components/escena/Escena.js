@@ -18,14 +18,10 @@ const EscenaStyledClicked = styled.p`
         background-color: pink;
 `;
 
-
 //const [frase, onclick] = useState(true);
 
-
-function Escena ({dato, selectedScene, isSelectedScene, printHello}) {
-    /* console.log(selectedScene)
-    console.log(isSelectedScene) */
-    console.log(printHello)
+function Escena ({dato, isSelectedScene}) {
+    
     return ( 
         <Fragment>
             {isSelectedScene ? <EscenaStyledClicked>{dato}</EscenaStyledClicked>  : <EscenaStyled>{dato}</EscenaStyled> }

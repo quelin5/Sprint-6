@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Escena from './escena/Escena';
+//import Escena from './escena/Escena';
 
 
 const BotoStyled = styled.button`
@@ -15,21 +15,19 @@ const DivFlex = styled.div`
 `;
 
 
-const Boto = ({setSelectedScene, setPrintHello}) => {
+const Boto = ({setSelectedScene}) => {
     
     return ( 
         <DivFlex>
             <BotoStyled className='Anterior' onClick={()=> {
                 setSelectedScene(-1)
-                setPrintHello('Hello')
-                }}>
+            }}>
                 Anterior
-            </BotoStyled>
+            </BotoStyled >
 
             <BotoStyled className='Següent' onClick={()=>{
                 setSelectedScene(+1)
-                setPrintHello('Hello')
-                }}>
+            }}>
                 Següent
             </BotoStyled>   
         </DivFlex>
