@@ -4,16 +4,12 @@ import datos from "./datos";
 import Boto from "./components/Boto";
 import WelcomeView from "./views/WelcomeView";
 import styled from "@emotion/styled";
-import image0 from "./img/1.jpg";
-import image1 from "./img/2.jpg";
-import image2 from "./img/3.jpg";
-import image3 from "./img/4.jpg";
 
 const Div = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background: url(${(props) => props.image});
+  background-image: url(${(props) => props.image});
 `;
 
 function App() {
@@ -39,15 +35,7 @@ function App() {
 
   // IF PRIMERA VEZ QUE SE VISITA LA PAGINA O NO
   const retrieveImage = () => {
-    if (selectedScene === 0) {
-      return image0;
-    } else if (selectedScene === 1) {
-      return image1;
-    } else if (selectedScene === 2) {
-      return image2;
-    } else if (selectedScene === 3) {
-      return image3;
-    }
+    return datos[selectedScene].img;
   };
 
   return (
@@ -57,7 +45,7 @@ function App() {
       {isLandingPage ? (
         <WelcomeView setPageVisitedBefore={setIsLandingPage} />
       ) : (
-        <Div image={retrieveImage()}>
+        <Div image={retrieveImage}>
           <Boto setSelectedScene={handleSetSelectedScene} />
           {datos.map((dato, index, imagen) => (
             <Escena
