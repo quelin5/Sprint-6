@@ -20,13 +20,13 @@ const Boto = ({setSelectedScene}) => {
     return ( 
         <DivFlex>
             <BotoStyled className='Anterior' onClick={()=> {
-                setSelectedScene(-1)
+                setSelectedScene('-')
             }}>
                 Anterior
             </BotoStyled >
 
             <BotoStyled className='Següent' onClick={()=>{
-                setSelectedScene(+1)
+                setSelectedScene('+')
             }}>
                 Següent
             </BotoStyled>   
